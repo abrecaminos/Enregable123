@@ -3,7 +3,9 @@ package com.example.federico.entregablemvc.model.POJO;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Paint {
+import java.io.Serializable;
+
+public class Paint implements Serializable {
 
         @SerializedName("image")
         @Expose

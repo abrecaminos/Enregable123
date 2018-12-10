@@ -18,6 +18,7 @@ public class PaintAdapter extends RecyclerView.Adapter<PaintAdapter.PaintViewHol
 
 
     private List<Paint> listaPaints;
+    private ListenerPaintAdapter listenerPaintAdapter;
 
     public void setListaPaints(List<Paint> listaPaints) {
         this.listaPaints = listaPaints;
@@ -26,7 +27,13 @@ public class PaintAdapter extends RecyclerView.Adapter<PaintAdapter.PaintViewHol
 
     public PaintAdapter() {
         this.listaPaints = new ArrayList<>();
+        this.listenerPaintAdapter = listenerPaintAdapter;
     }
+
+    public interface ListenerPaintAdapter{
+        public void informarSeleccion(Paint Paint);
+    }
+
 
     public class PaintViewHolder extends RecyclerView.ViewHolder{
 
