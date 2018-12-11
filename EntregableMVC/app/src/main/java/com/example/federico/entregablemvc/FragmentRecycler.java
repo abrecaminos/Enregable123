@@ -17,6 +17,8 @@ import com.example.federico.entregablemvc.model.POJO.MoMA;
 import com.example.federico.entregablemvc.model.POJO.Paint;
 import com.example.federico.entregablemvc.util.ResultListener;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class FragmentRecycler extends Fragment implements PaintAdapter.ListenerPaintAdapter {
@@ -36,7 +38,9 @@ public class FragmentRecycler extends Fragment implements PaintAdapter.ListenerP
 
         recyclerViewPaints = view.findViewById(R.id.recyclerview_paints);
 
-        paintAdapter = new PaintAdapter();
+        List<Paint> recetas = new ArrayList<>();
+        paintAdapter = new PaintAdapter(recetas, this);
+        //paintAdapter = new PaintAdapter();
         recyclerViewPaints.setAdapter(paintAdapter);
         linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerViewPaints.setLayoutManager(linearLayoutManager);
@@ -52,12 +56,13 @@ public class FragmentRecycler extends Fragment implements PaintAdapter.ListenerP
         return view;
 
     }
+
+
+
     @Override
     public void informarSeleccion(Paint paint) {
-        //el fragment es solo un pasa manos.
         listenerFragmentRecycler.informarSeleccion(paint);
     }
-
 
     public interface ListenerFragmentRecycler{
         public void informarSeleccion(Paint paint);
@@ -69,6 +74,4 @@ public class FragmentRecycler extends Fragment implements PaintAdapter.ListenerP
         this.listenerFragmentRecycler = (ListenerFragmentRecycler) context;
     }
 
-    public FragmentRecycler() {
     }
-}

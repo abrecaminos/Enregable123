@@ -15,7 +15,7 @@ import com.example.federico.entregablemvc.model.POJO.Paint;
 
 public class FragmentDetalle extends Fragment {
 
-    public static final String KEY_PAINT = "KEY_PAINT";
+    //public static final String KEY_PAINT = "KEY_PAINT";
     private TextView pruebaText;
 
 
@@ -24,16 +24,14 @@ public class FragmentDetalle extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_detalle, container, false);
         // Inflate the layout for this fragment
-        pruebaText = view.findViewById(R.id.textViewPeueba);
+        pruebaText = view.findViewById(R.id.textViewPrueba);
 
 
-        Bundle bundle = getArguments();
-        Paint paint = (Paint) bundle.getSerializable(KEY_PAINT);
-        pruebaText.setText(paint.getName());
+        //Bundle bundle = getArguments();
+        //Paint paint = (Paint) bundle.getSerializable(KEY_PAINT);
+        //pruebaText.setText(paint.getName());
 
         return view;
     }
 
-    public FragmentDetalle() {
     }
-}
