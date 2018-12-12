@@ -3,7 +3,7 @@ package com.example.federico.entregablemvc.model.POJO;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Artist_ {
+public class Artist {
 
     @SerializedName("artistId")
     @Expose

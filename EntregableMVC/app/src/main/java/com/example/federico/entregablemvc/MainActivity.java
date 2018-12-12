@@ -106,10 +106,10 @@ public class MainActivity extends AppCompatActivity implements FragmentRecycler.
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentDetalle fragmentDetalle = new FragmentDetalle();
 
-        //Bundle bundle = new Bundle();
-        //bundle.putSerializable(FragmentDetalle.KEY_PAINT,paint);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(FragmentDetalle.KEY_PAINT,paint);
 
-        //fragmentDetalle.setArguments(bundle);
+        fragmentDetalle.setArguments(bundle);
         fragmentManager.beginTransaction().replace(R.id.contenedorRecycler, fragmentDetalle).addToBackStack(null).commit();
         Toast.makeText(this, paint.getName(), Toast.LENGTH_SHORT).show();
     }

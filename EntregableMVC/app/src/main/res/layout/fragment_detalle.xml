@@ -7,11 +7,24 @@
     tools:context=".FragmentDetalle">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="prueba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Texto Retrofit"
         android:gravity="center_vertical"
         android:textSize="30dp"
-        android:id="@+id/textViewPrueba"/>
+        android:id="@+id/textViewRetrofit"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextoDatabase"
+        android:gravity="center_vertical"
+        android:textSize="30dp"
+        android:id="@+id/textViewDatabase"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageViewDetalle"/>
 
 </LinearLayout>

@@ -49,11 +49,13 @@ public class PaintAdapter extends RecyclerView.Adapter {
     public class PaintViewHolder extends RecyclerView.ViewHolder{
 
         private TextView textViewtitulo;
+        private ImageView imageViewPiaint;
         private Paint paint;
 
         public PaintViewHolder(View itemView) {
             super(itemView);
             textViewtitulo = itemView.findViewById(R.id.celda_TextTitulo);
+            imageViewPiaint = itemView.findViewById(R.id.celda_ImageViewPaint);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -67,6 +69,7 @@ public class PaintAdapter extends RecyclerView.Adapter {
             this.paint = mPaint;
 
             textViewtitulo.setText(mPaint.getName());
+            //imageViewPiaint.setImageResource();
         }
     }
 
@@ -85,9 +88,9 @@ public class PaintAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        Paint receta = listaPaints.get(position);
+        Paint paint = listaPaints.get(position);
         PaintViewHolder recetasViewHolder = (PaintViewHolder) holder;
-        recetasViewHolder.bind(receta);
+        recetasViewHolder.bind(paint);
     }
 
 

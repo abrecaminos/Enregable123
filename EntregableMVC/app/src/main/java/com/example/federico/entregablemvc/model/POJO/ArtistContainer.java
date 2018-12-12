@@ -9,13 +9,13 @@ public class ArtistContainer {
 
     @SerializedName("artists")
     @Expose
-    private List<Artist_> artists = null;
+    private List<Artist> artists = null;
 
-    public List<Artist_> getArtists() {
+    public List<Artist> getArtists() {
         return artists;
     }
 
-    public void setArtists(List<Artist_> artists) {
+    public void setArtists(List<Artist> artists) {
         this.artists = artists;
     }
 

@@ -1,8 +1,11 @@
 package com.example.federico.entregablemvc;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,11 +15,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.federico.entregablemvc.controller.PaintController;
 import com.example.federico.entregablemvc.model.POJO.MoMA;
 import com.example.federico.entregablemvc.model.POJO.Paint;
 import com.example.federico.entregablemvc.util.ResultListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +38,7 @@ public class FragmentRecycler extends Fragment implements PaintAdapter.ListenerP
     private PaintAdapter paintAdapter;
     private LinearLayoutManager linearLayoutManager;
     private ListenerFragmentRecycler listenerFragmentRecycler;
+
 
 
     @Override
@@ -40,7 +52,8 @@ public class FragmentRecycler extends Fragment implements PaintAdapter.ListenerP
 
         List<Paint> recetas = new ArrayList<>();
         paintAdapter = new PaintAdapter(recetas, this);
-        //paintAdapter = new PaintAdapter();
+        //
+        // paintAdapter = new PaintAdapter();
         recyclerViewPaints.setAdapter(paintAdapter);
         linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerViewPaints.setLayoutManager(linearLayoutManager);
@@ -73,5 +86,7 @@ public class FragmentRecycler extends Fragment implements PaintAdapter.ListenerP
         super.onAttach(context);
         this.listenerFragmentRecycler = (ListenerFragmentRecycler) context;
     }
+
+
 
     }
