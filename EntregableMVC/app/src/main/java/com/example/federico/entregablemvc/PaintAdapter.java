@@ -1,6 +1,7 @@
 package com.example.federico.entregablemvc;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,7 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.ViewTarget;
 import com.example.federico.entregablemvc.model.POJO.Paint;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,11 +56,15 @@ public class PaintAdapter extends RecyclerView.Adapter {
         private TextView textViewtitulo;
         private ImageView imageViewPiaint;
         private Paint paint;
+        //private StorageReference mStorageRef;
+
 
         public PaintViewHolder(View itemView) {
             super(itemView);
             textViewtitulo = itemView.findViewById(R.id.celda_TextTitulo);
             imageViewPiaint = itemView.findViewById(R.id.celda_ImageViewPaint);
+
+            //mStorageRef = FirebaseStorage.getInstance().getReference();
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -69,7 +78,9 @@ public class PaintAdapter extends RecyclerView.Adapter {
             this.paint = mPaint;
 
             textViewtitulo.setText(mPaint.getName());
-            //imageViewPiaint.setImageResource();
+
+            //final StorageReference paint_reference = mStorageRef.child(paint.getImage());
+            //Glide.with(this).load(paint_reference).into(imageViewPiaint);
         }
     }
 

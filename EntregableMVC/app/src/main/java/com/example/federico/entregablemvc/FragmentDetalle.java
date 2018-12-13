@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
@@ -47,6 +48,8 @@ public class FragmentDetalle extends Fragment {
         textoRetrofit = view.findViewById(R.id.textViewRetrofit);
         textoFirebase = view.findViewById(R.id.textViewDatabase);
         imageViewDetalle = view.findViewById(R.id.imageViewDetalle);
+
+        mStorageRef = FirebaseStorage.getInstance().getReference();
 
 
         Bundle bundle = getArguments();
@@ -104,13 +107,17 @@ public class FragmentDetalle extends Fragment {
     }
 
     public void bajarFotoGlide(){
-        StorageReference paint_reference = mStorageRef;
+        final StorageReference paint_reference = mStorageRef.child(paint.getImage());
+        //final StorageReference paint_reference = mStorageRef.child("artistpaints/keithharing_dreaming.png");
+        //StorageReference bart_reference = mStorageRef.child("imagess/homero_bart.jpg");
 
-        List<Artist> artistList = new ArrayList<>();
+        //List<Artist> artistList = new ArrayList<>();
 
         //for (artistList )
         //if (paint.getImage()).equals {
             Glide.with(this).load(paint_reference).into(imageViewDetalle);
         }
+
+
 
 }
