@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="220dp">
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="120dp">
 
 
-
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/celda_ImageViewPaint"/>
+    <ImageView
+        android:id="@+id/celda_ImageViewPaint"
+        android:layout_width="150dp"
+        android:layout_height="match_parent" />
 
 
         <TextView
             android:id="@+id/celda_TextTitulo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nombre Personaje"
-            android:textSize="25dp"
-            android:gravity="center"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:text="CLCLCL"/>
-
+            android:layout_height="match_parent"
+            android:text="Nombre Paint"
+            android:textSize="30dp"
+            android:textColor="#c30ee7"
+            android:textColorHighlight="#d3dc2f"
+            android:shadowColor="#e70e39"
+            android:gravity="center"
+            android:fontFamily="@font/shink"/>
 
 
 </LinearLayout>

@@ -4,27 +4,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FragmentDetalle">
+    tools:context=".FragmentDetalle"
+    android:background="#ffffff">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Texto Retrofit"
-        android:gravity="center_vertical"
-        android:textSize="30dp"
-        android:id="@+id/textViewRetrofit"/>
+        android:textAllCaps="true"
+        android:gravity="center_horizontal"
+        android:textSize="40dp"
+        android:id="@+id/textViewRetrofit"
+        android:textColorHighlight="#0836bf"
+        android:textColor="#6e0f6e"
+        android:fontFamily="@font/shink"
+        android:shadowColor="#992f2f"
 
-    <TextView
-        android:layout_width="wrap_content"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextoDatabase"
-        android:gravity="center_vertical"
-        android:textSize="30dp"
-        android:id="@+id/textViewDatabase"/>
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artista: "
+            android:gravity="bottom"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextoDatabase"
+            android:gravity="center_horizontal"
+            android:textSize="25dp"
+            android:id="@+id/textViewDatabase"/>
+
+
+
+    </LinearLayout>
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/imageViewDetalle"/>
 
 </LinearLayout>
